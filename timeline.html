@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>tilemline</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="./font/iconfont.css">
+<style type="text/css" media="screen">
+	*{
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+	.time-wrapper{
+		width: 100%;
+		text-align: center;
+	}
+	.time-wrapper__inner{
+		display: inline-block;
+    width: 100%;
+    overflow:auto;
+	}
+	.time-line {
+		display: inline-block;
+		/* width: 100%; */
+		list-style: none;
+    font-size: 0;
+    padding-top: 8px;
+	}
+	.time-line__item{
+		position: relative;
+		display: inline-block;
+    font-size: 12px;
+	}
+	
+	.time-line__item::before,
+	.time-line__item::after{
+		content: "";
+		position: absolute;
+		width: 50%;
+		top: 10px;
+		border-top: 2px solid #ddd;
+		z-index: -1;
+	}
+	.time-line__item::before{
+		left: 0;
+	}
+	.time-line__item::after{
+		right: 0;
+	}
+	.time-line__item:first-child::before,
+	.time-line__item:last-child::after{
+		border-top: 0;
+	}
+	.time-line__point {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 20px;
+		height: 20px;
+		margin-left: -10px;
+		border-radius: 100%;
+		border: 1px solid #ddd;
+		background-color: #fff;
+		cursor: pointer;
+  }
+  .time-line__point:hover{
+    background-color: #dd5765;
+  }
+	.time-line__label{
+		padding:25px 10px;
+	}
+	.time-line__play,
+	.time-line__prev,
+	.time-line__next{
+		display: inline-block;
+    width:25px;
+    height:25px;
+    text-align: center;
+    vertical-align: 10px;
+	}
+  .time-line__play{
+    border-radius: 50px;
+    border: 2px solid rgba(90, 90, 90, 0.425);
+    margin-top: -5px;
+  }
+
+  .time-line__play:hover{
+    border-color: #dd5765;
+  }
+  .active{
+    background-color: #dd5765;
+    border:3px solid #ffa2ab94;
+  }
+</style>
+</head>
+<body>
+  <div id = "test"></div>
+  <input type="text" id = "input">
+    <div class="time-wrapper">
+    	<div class="time-wrapper__inner">
+    		<div class="time-line__play iconfont icon-zanting"></div>
+          <div class="time-line__prev iconfont icon-left"></div>
+    		<ul class="time-line">
+    			<!-- <li class="time-line__item">
+    				
+    				<div class="time-line__point"></div>
+    				<div class="time-line__label">7-29</div>
+    			</li>
+    			<li class="time-line__item">
+    				
+    				<div class="time-line__point"></div>
+    				<div class="time-line__label">7-29</div>
+          </li>
+          <li class="time-line__item">
+    				
+    				<div class="time-line__point"></div>
+    				<div class="time-line__label">7-29</div>
+    			</li>
+    			<li class="time-line__item">
+    				
+    				<div class="time-line__point"></div>
+    				<div class="time-line__label">7-29</div>
+    			</li> -->
+    		</ul>
+    		<div class="time-line__next iconfont icon-right-copy"></div>
+    	</div>
+    </div>
+    <script src="./js/timeline.js"></script>
+</body>
+</html>
