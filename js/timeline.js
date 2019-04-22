@@ -22,7 +22,7 @@ class TimeLine {
   init() {
     this.creatDOM()
     this.controlPlay()
-    this.openTimer(true)
+    // this.openTimer(true)
     this.trigger()
     document.addEventListener('mousedown', function(ev) {
       ev.preventDefault();
@@ -90,7 +90,7 @@ class TimeLine {
   }
   // 开关
   controlPlay() {
-    let onOff = true
+    let onOff = false
     this.play.addEventListener('click', ev => {
       if (onOff) {
         ev.target.className = 'time-line__play iconfont icon-kaishi';
